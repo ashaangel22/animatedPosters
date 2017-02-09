@@ -1,0 +1,292 @@
+/* 
+==============================================
+CONTENT:	Animated Posters
+AUTHOR:		Atiya Rahman
+==============================================
+
+TABLE OF CONTENTS:
+
+1. Main Layout
+2. Content
+
+==============================================
+*/
+@import url("https://fonts.googleapis.com/css?family=Pangolin");
+/* 1. Main Layout ================================= */
+* {
+  box-sizing: border-box; }
+
+/**
+ * Mixins
+ */
+/**
+ * Base
+ */
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue","Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Pangolin', cursive;
+  color: aliceblue; }
+
+h1 {
+  font-size: 80px; }
+
+/**
+ * Gallery
+ */
+.gallery {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 1;
+  background: #63afe6; }
+  .gallery.fadeOut {
+    opacity: 0; }
+
+.gallery__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center; }
+
+/**
+ * Poster
+ */
+.poster {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  display: inline-block;
+  vertical-align: middle; }
+
+.poster__content {
+  position: relative;
+  width: 560px;
+  height: 700px;
+  overflow: hidden;
+  padding: 0 1em;
+  background: url("../img/up.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.2); }
+
+.poster__house {
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  top: 27%;
+  left: -10%;
+  animation: house;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+  .poster__house .houseimg {
+    position: absolute;
+    height: 100px;
+    bottom: 0%;
+    left: 35%; }
+  .poster__house .balloons, .poster__house .lightGreen, .poster__house .pink, .poster__house .purple, .poster__house .orange, .poster__house .red, .poster__house .green {
+    position: absolute;
+    width: 35px;
+    height: 55px;
+    border-radius: 80% 80% 80% 80%; }
+  .poster__house .lightGreen {
+    background: rgba(180, 224, 67, 0.9);
+    left: 50%;
+    top: 56%;
+    transform: rotate(10deg);
+    animation: lightGreen;
+    animation-delay: 7.3s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+  .poster__house .pink {
+    background: rgba(232, 106, 232, 0.87);
+    left: 45%;
+    top: 65%;
+    animation: pink;
+    animation-delay: 8s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+  .poster__house .purple {
+    background: rgba(139, 67, 224, 0.9);
+    left: 43%;
+    top: 53%;
+    transform: rotate(-5deg);
+    animation: purple;
+    animation-delay: 7s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+  .poster__house .orange {
+    background: rgba(230, 145, 59, 0.9);
+    left: 35%;
+    top: 62%;
+    transform: rotate(-20deg);
+    animation: orange;
+    animation-delay: 7.5s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+  .poster__house .red {
+    background: rgba(224, 67, 73, 0.9);
+    left: 54%;
+    top: 61%;
+    transform: rotate(15deg);
+    animation: red;
+    animation-delay: 7.9s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+  .poster__house .green {
+    background: rgba(67, 224, 115, 0.9);
+    left: 42%;
+    top: 58%;
+    transform: rotate(-15deg);
+    animation: green;
+    animation-delay: 7.7s;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+
+@keyframes house {
+  0% {
+    top: 27%;
+    left: -10%; }
+  33.33% {
+    top: -35%;
+    left: 3%; }
+  66.66% {
+    top: -30%;
+    left: 14%; }
+  100% {
+    top: -26%;
+    left: 15%; } }
+
+@keyframes purple {
+  100% {
+    top: 25%;
+    left: 50%; } }
+
+@keyframes lightGreen {
+  100% {
+    top: 25%;
+    left: 65%; } }
+
+@keyframes green {
+  100% {
+    top: 25%;
+    left: 30%; } }
+
+@keyframes orange {
+  100% {
+    top: 25%;
+    left: 25%; } }
+
+@keyframes pink {
+  100% {
+    top: 25%;
+    left: 45%; } }
+
+@keyframes red {
+  100% {
+    top: 25%;
+    left: 60%; } }
+
+.poster__header {
+  width: 95%;
+  float: left;
+  margin-top: 25%;
+  margin-left: 10%;
+  overflow: hidden;
+  opacity: 0;
+  animation: header;
+  animation-delay: 7s;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes header {
+  100% {
+    opacity: 1; } }
+
+.poster__header-title {
+  margin-bottom: .3em;
+  font-size: 45px; }
+
+.poster__header-subtitle {
+  width: 35%;
+  float: left;
+  font-size: 14px;
+  line-height: 1; }
+
+.poster__header-meta {
+  position: relative;
+  top: 0.2em;
+  width: 65%;
+  float: right;
+  font-size: 6px;
+  line-height: 1.5;
+  font-weight: bold; }
+  .poster__header-meta li:last-child {
+    margin-top: 4px; }
+
+.poster__body {
+  position: relative;
+  top: 8px;
+  width: 25%;
+  float: right;
+  margin-top: 40%;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1; }
+  .poster__body li:nth-child(3n) {
+    margin-top: 4px; }
+
+.poster__footer {
+  position: absolute;
+  top: 45%;
+  right: auto;
+  bottom: auto;
+  left: 73.5%;
+  font-size: 3px; }
+
+.poster__rules {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .poster__rules div {
+    position: absolute; }
+
+/*# sourceMappingURL=main.css.map */
