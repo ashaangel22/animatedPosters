@@ -130,7 +130,7 @@ h1 {
     left: 45%;
     top: 65%;
     animation: pink;
-    animation-delay: 8s;
+    animation-delay: 9s;
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards; }
@@ -179,10 +179,7 @@ h1 {
   0% {
     top: 27%;
     left: -10%; }
-  33.33% {
-    top: -35%;
-    left: 3%; }
-  66.66% {
+  80% {
     top: -30%;
     left: 14%; }
   100% {
